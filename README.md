@@ -15,3 +15,4 @@ CLI tool for your projects
 -   [ ] typescript?
 -   [ ] ci?
 -   [ ] cd?
+-   [ ] babel
