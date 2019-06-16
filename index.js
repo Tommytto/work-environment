@@ -12,8 +12,10 @@ const {setupLinter} = require('./src/linting/linting');
 const actionConfig = {
     [ACTION.LINTER]: setupLinter,
 };
-askAction().then((answerList) => {
-    const choosedAction = answerList.action;
-    const operation = actionConfig[choosedAction];
-    operation();
+askAction().then(async ({settingsList}) => {
+    for (let i = 0; i < settingsList.length; i++) {
+        const settingName = settingsList[i];
+        const operation = actionConfig[settingName];
+        operation();
+    }
 });
